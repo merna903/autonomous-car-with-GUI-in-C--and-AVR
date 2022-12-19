@@ -27,12 +27,3 @@ unsigned char UART_RxChar()
 	return(UDR0);						/* Return the byte */
 }
 
-void UART_SendString(char *str)					/* Send string of USART data function */
-{
-	int i=0;
-	while (str[i]!=0)
-	{
-		UART_TxChar(str[i]);						/* Send each char of string till the NULL */
-		i++;
-	}
-}

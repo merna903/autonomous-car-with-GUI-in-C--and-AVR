@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\GUI\\GUI\\GUI.csproj",
+      "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\autonomous-car-with-GUI-in-C--and-AVR\\GUI\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\GUI\\GUI\\GUI.csproj",
+      "projectPath": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\autonomous-car-with-GUI-in-C--and-AVR\\GUI\\GUI\\GUI.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\GUI\\GUI\\obj\\",
+      "outputPath": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\autonomous-car-with-GUI-in-C--and-AVR\\GUI\\GUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

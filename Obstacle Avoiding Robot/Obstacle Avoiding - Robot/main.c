@@ -9,9 +9,11 @@
 #include "RC_Controling_interface.h"
 #include "Q_learn.h"
 #include "uart.h"
+#include "ManualPlay.h"
 #define  F_CPU 16000000UL
 #include <util/delay.h>
- 
+bool isAutoPressed = false;
+bool isManualPressed = false;
 int main(void)
 {
 	//Set the Arduino led as output
@@ -40,24 +42,18 @@ int main(void)
 		Test();
 	}
 	
-	unsigned char data;
-	bool isAutoPressed = false;
-	bool isManualPressed = false;
+	unsigned char data = 0;
     while (1)
     {		
 		
 		data = UART_RxChar();
-		if( data == '1' && !isAutoPressed)
+		if( data == '1' )
 		{
 			auto_play();
-			isAutoPressed = true;
-			isManualPressed = false;
 		}
-		else if (data == '2' && !isManualPressed)
+		else if ( data == '2' )
 		{
-			manual_play();
-			isAutoPressed = false;
-			isManualPressed = true;
+			manual_paly();
 		} 
 	}
 }

@@ -6,6 +6,5 @@
 extern void 		 UART_Init(long USART_BAUDRATE);
 extern void 		 UART_TxChar(char ch);
 extern unsigned char UART_RxChar();
-extern void			 UART_SendString(char *str);
 
 #endif

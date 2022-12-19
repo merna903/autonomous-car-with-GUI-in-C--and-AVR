@@ -22,24 +22,44 @@ namespace GUI
 
         private void button3_MouseHover(object sender, EventArgs e)
         {
-            this.button3.BackColor = System.Drawing.Color.DarkRed;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(136, 14, 79);
             Refresh();
         }
 
         private void button3_MouseLeave(object sender, EventArgs e)
         {
-            this.button3.BackColor = System.Drawing.Color.DarkGray;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(194, 24, 91);
             Refresh();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void arrowButton4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            this.button2.BackColor = System.Drawing.Color.FromArgb(136, 14, 79);
+            Refresh();
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            this.button2.BackColor = System.Drawing.Color.FromArgb(194, 24, 91);
+            Refresh();
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            this.button1.BackColor = System.Drawing.Color.FromArgb(136, 14, 79);
+            Refresh();
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            this.button1.BackColor = System.Drawing.Color.FromArgb(194, 24, 91);
+            Refresh();
         }
     }
 }

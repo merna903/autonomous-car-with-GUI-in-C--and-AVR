@@ -111,6 +111,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ManualPlay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ManualPlay.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Q-learning.c">
       <SubType>compile</SubType>
     </Compile>

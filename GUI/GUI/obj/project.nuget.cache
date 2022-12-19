@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F7cWRpxi0HzV1sSc7QLXOww2vXf2dNR6qvlEa6LhU2XV7m33p3rZuZhfFgdkG8gxIy4s1k2NdbQ6bcfIeh3YHA==",
+  "dgSpecHash": "HvS4tFbkE9wvWQRg4s0u2lpL5fTNNUKh4lsilStuGjuA7jCf75KxU9kgtIU6DOH1O8bpKx8qrDCWtEd9XhRbQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\GUI\\GUI\\GUI.csproj",
+  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\autonomous-car-with-GUI-in-C--and-AVR\\GUI\\GUI\\GUI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
