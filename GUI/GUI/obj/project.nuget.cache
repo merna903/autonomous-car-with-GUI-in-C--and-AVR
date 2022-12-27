@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "HvS4tFbkE9wvWQRg4s0u2lpL5fTNNUKh4lsilStuGjuA7jCf75KxU9kgtIU6DOH1O8bpKx8qrDCWtEd9XhRbQA==",
+  "dgSpecHash": "eYwVJoFijljpaX2baCWbGpo+rKTno1MVzsrsxltt9CrbR4q8saiJkZFob5YMAKq314/UbUMZm/yCbVkzgNp63Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\acer\\OneDrive\\Documents\\4th\\1st term\\CI\\Autonomous Car\\autonomous-car-with-GUI-in-C--and-AVR\\GUI\\GUI\\GUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\acer\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\7.0.0\\runtime.linux-arm.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\7.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\7.0.0\\runtime.linux-x64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\runtime.native.system.io.ports\\7.0.0\\runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-x64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\system.io.ports\\7.0.0\\system.io.ports.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

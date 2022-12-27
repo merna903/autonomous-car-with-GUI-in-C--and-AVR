@@ -12,17 +12,17 @@
 #include "ManualPlay.h"
 #define  F_CPU 16000000UL
 #include <util/delay.h>
-bool isAutoPressed = false;
-bool isManualPressed = false;
+int fristTime ;
 int main(void)
 {
+	fristTime =0;
 	//Set the Arduino led as output
 	DIO_SetPinDirection(PORT1,5,OUTPUT);
 	//Set the motor directions pins as output
-	DIO_SetPinDirection(PORT2,0,OUTPUT);
-	DIO_SetPinDirection(PORT2,1,OUTPUT);
-	DIO_SetPinDirection(PORT2,2,OUTPUT);
-	DIO_SetPinDirection(PORT2,3,OUTPUT);
+	DIO_SetPinDirection(PORT3,2,OUTPUT);
+	DIO_SetPinDirection(PORT3,3,OUTPUT);
+	DIO_SetPinDirection(PORT3,4,OUTPUT);
+	DIO_SetPinDirection(PORT3,5,OUTPUT);
 	//Set Trigger pin of the ultrasonic as output	
 	DIO_SetPinDirection(PORT3,PIN7,OUTPUT);
 	// Configuration + center position
@@ -30,10 +30,9 @@ int main(void)
 	_delay_ms(1000);
 	// Config the motor speed 
 	config_RC_Driver();
-	UART_Init(9600);
+	UART_init(9600);
 	
-	void auto_play()
-	{
+	void auto_play(){
 		//Clear the Arduino led
 		DIO_SetPinValue(PORT1,5,0);
 		Train();
@@ -44,9 +43,13 @@ int main(void)
 	
 	unsigned char data = 0;
     while (1)
-    {		
-		
-		data = UART_RxChar();
+    {	
+		if (fristTime==0)	
+		{
+			data = UART_RxChar();
+			fristTime = 1;
+		}
+    	else data = UDR0;
 		if( data == '1' )
 		{
 			auto_play();

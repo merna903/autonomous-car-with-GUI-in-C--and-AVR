@@ -108,31 +108,24 @@ float DECAY(float PARAMETER)
   return PARAMETER*0.98;
 }
 
-int temp=0;
+int temp1=0;
 bool Obstacle_Avoider()
 {
 	distance=ultarasonic_distance();
+	temp1=distance;
 	if(distance<40)
 	{
-		temp=distance;
 		Obstacle = true;
-		UART_TxChar('1');
-		UART_TxChar(temp/100);
-		temp %=100;
-		UART_TxChar(temp/10);
-		temp %= 10;
-		UART_TxChar(temp);
 	}
 	else
 	{
 		Obstacle = false;
-		UART_TxChar('2');
-		UART_TxChar(temp/100);
-		temp %=100;
-		UART_TxChar(temp/10);
-		temp %= 10;
-		UART_TxChar(temp);
 	}
+	UART_TxChar(temp1/100);
+	temp1 %=100;
+	UART_TxChar(temp1/10);
+	temp1 %= 10;
+	UART_TxChar(temp1);
 	_delay_ms(10);
 	return Obstacle;
 }
@@ -237,56 +230,59 @@ void Train()
 {
 	for(int I =0; I<EPISODES; I++)
 	{
-		while(true)
-		{			   
-			forward();     
-			Obstacle = Obstacle_Avoider();
-            if(Obstacle)
-			{  
-				//Looping over states to train the robot for each one of them
-				NEXT_STATE = (STATE+1) % STATES; 
+		if (UDR0!='2')
+		{
+			while(true)
+			{			   
+				forward();     
+				Obstacle = Obstacle_Avoider();
+				if(Obstacle)
+				{  
+					//Looping over states to train the robot for each one of them
+					NEXT_STATE = (STATE+1) % STATES; 
+					break;
+				}
+			}
+			/*
+			 Depending on the random number generated and the Epsilon value 
+			 we chose either to explore the actions randomly 
+			 or exploiting the actions from the q table
+			*/
+			PROB = RANDOM();
+			if (PROB<=EPSILON)     
+			{
+				ACTION = rand() % NUMBER_OF_ACTIONS;
+			}
+			else                  
+			{
+				ACTION = ARGMAX(Q,STATE);
+			}
+		  
+			switch (ACTION)
+			{			  
+				case 0:
+				break;
+			
+				case 1:
+				backward();
+				break;
+			
+				case 2:
+				right();
+				break;	   
+			
+				case 3:
+				left();
 				break;
 			}
-		}
-		/*
-		 Depending on the random number generated and the Epsilon value 
-		 we chose either to explore the actions randomly 
-		 or exploiting the actions from the q table
-		*/
-		PROB = RANDOM();
-		if (PROB<=EPSILON)     
-		{
-			ACTION = rand() % NUMBER_OF_ACTIONS;
-		}
-		else                  
-		{
-			ACTION = ARGMAX(Q,STATE);
-		}
-		  
-		switch (ACTION)
-		{			  
-			case 0:
-			break;
-			
-			case 1:
-			backward();
-			break;
-			
-			case 2:
-            right();
-		    break;	   
-			
-			case 3:
-			left();
-			break;
-		}
-		_delay_ms(10000);
-		stop();
-		REWARD = REWARDS[STATE][ACTION];
-		_delay_ms(500); 
-		Update(Q,STATE,NEXT_STATE,ACTION,REWARD,ALPHA ,GAMMA);
-		STATE = NEXT_STATE;
-		EPSILON = DECAY(EPSILON);      
+			_delay_ms(10000);
+			stop();
+			REWARD = REWARDS[STATE][ACTION];
+			_delay_ms(500); 
+			Update(Q,STATE,NEXT_STATE,ACTION,REWARD,ALPHA ,GAMMA);
+			STATE = NEXT_STATE;
+			EPSILON = DECAY(EPSILON);      
+		} else break;
 	}
 	save_q_table();
 }
@@ -295,7 +291,7 @@ void Train()
 void Test()
 {
 	retrive_q_table();
-	while(true)
+	while( UDR0!='2' )
 	{
 		forward();
 		Obstacle = Obstacle_Avoider();

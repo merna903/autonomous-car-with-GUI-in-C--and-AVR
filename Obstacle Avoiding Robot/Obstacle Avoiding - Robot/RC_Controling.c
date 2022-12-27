@@ -22,47 +22,47 @@ void config_RC_Driver()
 }
 void forward(){
 	//Left motor
-	DIO_SetPinValue(PORT2,0,1);
-	DIO_SetPinValue(PORT2,1,0);
+	DIO_SetPinValue(PORT3,2,1);
+	DIO_SetPinValue(PORT3,3,0);
 	//Right motor
-	DIO_SetPinValue(PORT2,2,1);
-	DIO_SetPinValue(PORT2,3,0);
+	DIO_SetPinValue(PORT3,4,1);
+	DIO_SetPinValue(PORT3,5,0);
 }
 
  void backward(){
 	//Left motor
-	DIO_SetPinValue(PORT2,0,0);
-	DIO_SetPinValue(PORT2,1,1);
+	DIO_SetPinValue(PORT3,2,0);
+	DIO_SetPinValue(PORT3,3,1);
 	//Right motor
-	DIO_SetPinValue(PORT2,2,0);
-	DIO_SetPinValue(PORT2,3,1);
+	DIO_SetPinValue(PORT3,4,0);
+	DIO_SetPinValue(PORT3,5,1);
  }
  
  void right(){
 	 //Left motor
-	 DIO_SetPinValue(PORT2,0,1);
-	 DIO_SetPinValue(PORT2,1,0);
+	 DIO_SetPinValue(PORT3,2,1);
+	 DIO_SetPinValue(PORT3,3,0);
 	 //Right motor
-	 DIO_SetPinValue(PORT2,2,0);
-	 DIO_SetPinValue(PORT2,3,1);
+	 DIO_SetPinValue(PORT3,4,0);
+	 DIO_SetPinValue(PORT3,5,1);
  }
 
  void left() {
 	 //Left motor
-	 DIO_SetPinValue(PORT2,0,0);
-	 DIO_SetPinValue(PORT2,1,1);
+	 DIO_SetPinValue(PORT3,2,0);
+	 DIO_SetPinValue(PORT3,3,1);
 	 //Right motor
-	 DIO_SetPinValue(PORT2,2,1);
-	 DIO_SetPinValue(PORT2,3,0);
+	 DIO_SetPinValue(PORT3,4,1);
+	 DIO_SetPinValue(PORT3,5,0);
  }
  
  void stop(){
 	  //Left motor
-	  DIO_SetPinValue(PORT2,0,0);
-	  DIO_SetPinValue(PORT2,1,0);
+	  DIO_SetPinValue(PORT3,2,0);
+	  DIO_SetPinValue(PORT3,3,0);
 	  //Right motor
-	  DIO_SetPinValue(PORT2,2,0);
-	  DIO_SetPinValue(PORT2,3,0);
+	  DIO_SetPinValue(PORT3,4,0);
+	  DIO_SetPinValue(PORT3,5,0);
   }
  
  

@@ -15,54 +15,44 @@
 #include <avr/delay.h>
 #include <avr/interrupt.h>
 #include <avr/io.h>
-unsigned char data='z', temp='z';
-int distance,;
+unsigned char movedata='0', temp='0';
 void manual_paly()
 {
 	set_servo_angel(0);
-	while(true)
+	while(UDR0!='1')
 	{
-		data = UART_RxChar();
-		if (data!=temp)
+		movedata = UDR0;
+		if ( movedata != temp && movedata != '1' )
 		{
-			switch(data)
+			forward();
+			switch( movedata )
 			{
-				case 'f': 
+				case '3': 
 					forward();
-					temp='f';
+					temp='3';
 					break;
-				case 'b':
+				case '4':
 					backward();
-					temp='b';
+					temp='4';
 					break;
-				case 'r':
+				case '5':
 					right();
-					temp='r';
-					break;
-				case 'l':
-					left();
-					temp='l';
-					break;
-				case 's':
+					_delay_ms(100);
 					stop();
-					temp='s';
+					temp='5';
+					break;
+				case '6':
+					left();
+					_delay_ms(100);
+					stop();
+					temp='6';
+					break;
+				case '7':
+					stop();
+					temp='7';
 					break;
 			}
 		}
-		distance =ultarasonic_distance();
-		if(distance<40)
-		{
-			UART_TxChar('1');
-		}
-		else
-		{
-			UART_TxChar('2');
-		}
-		UART_TxChar(distance/100);
-		distance %=100;
-		UART_TxChar(distance/10);
-		distance %= 10;
-		UART_TxChar(distance);
-		_delay_ms(100);
+		
 	}
 }
