@@ -1,6 +1,7 @@
 #include <avr/io.h>
-#include <avr/delay.h>
 #include <math.h>
+#define  F_CPU 16000000UL
+#include <util/delay.h>
 #include "Ultarasonic/DIO/LIB/STD_TYPES.h"
 #include "Ultarasonic/DIO/LIB/MATH.h"
 #include "Ultarasonic/DIO/DIO_Interface.h"
@@ -10,8 +11,6 @@
 #include "Q_learn.h"
 #include "uart.h"
 #include "ManualPlay.h"
-#define  F_CPU 16000000UL
-#include <util/delay.h>
 int fristTime ;
 int main(void)
 {

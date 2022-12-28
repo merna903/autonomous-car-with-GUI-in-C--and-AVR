@@ -16,7 +16,7 @@ void UART_init(long USART_BAUDRATE)
 // Function to transmit data
 void UART_TxChar(char data)
 {
-	while (! (UCSR0A & (1<<UDRE0)));  /* Wait for empty transmit buffer */
+	//while (! (UCSR0A & (1<<UDRE0)));  /* Wait for empty transmit buffer */
 	UDR0 = data ;
 }
 

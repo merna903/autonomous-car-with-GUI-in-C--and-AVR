@@ -11,6 +11,7 @@
 #define Q_ROW 4
 #define Q_COL 4
 
+int temp1=0;
 bool Obstacle;
 int distance;
 //LEARNING RATE
@@ -65,6 +66,10 @@ float Q_OLD;
 float Q_NEW;
 float Q_MAX;
 
+bool readUrat()
+{
+	return (UDR0!='2');
+}
 
 //Saving the q table into the eeprom
 void save_q_table()
@@ -108,11 +113,10 @@ float DECAY(float PARAMETER)
   return PARAMETER*0.98;
 }
 
-int temp1=0;
+
 bool Obstacle_Avoider()
 {
 	distance=ultarasonic_distance();
-	temp1=distance;
 	if(distance<40)
 	{
 		Obstacle = true;
@@ -121,12 +125,6 @@ bool Obstacle_Avoider()
 	{
 		Obstacle = false;
 	}
-	UART_TxChar(temp1/100);
-	temp1 %=100;
-	UART_TxChar(temp1/10);
-	temp1 %= 10;
-	UART_TxChar(temp1);
-	_delay_ms(10);
 	return Obstacle;
 }
 
@@ -284,6 +282,12 @@ void Train()
 			EPSILON = DECAY(EPSILON);      
 		} else break;
 	}
+	temp1 = ultarasonic_distance()%1000;
+	UART_TxChar(temp1/100 + 48);
+	temp1 %= 100;
+	UART_TxChar(temp1/10 + 48);
+	temp1 %= 10;
+	UART_TxChar(temp1 + 48);
 	save_q_table();
 }
 
@@ -291,7 +295,7 @@ void Train()
 void Test()
 {
 	retrive_q_table();
-	while( UDR0!='2' )
+	while( readUrat() )
 	{
 		forward();
 		Obstacle = Obstacle_Avoider();
@@ -328,6 +332,12 @@ void Test()
 			}
 			_delay_ms(10000);
 			stop();
+			temp1 = ultarasonic_distance()%1000;
+			UART_TxChar(temp1/100 + 48);
+			temp1 %= 100;
+			UART_TxChar(temp1/10 + 48);
+			temp1 %= 10;
+			UART_TxChar(temp1 + 48);
 		}
 	}
 }

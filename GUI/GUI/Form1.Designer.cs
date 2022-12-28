@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -43,6 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -191,24 +194,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
-            this.label1.Location = new System.Drawing.Point(93, 55);
+            this.label1.Location = new System.Drawing.Point(103, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 29);
+            this.label1.Size = new System.Drawing.Size(49, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "00000";
+            this.label1.Text = "000";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
-            this.label2.Location = new System.Drawing.Point(61, 55);
+            this.label2.Location = new System.Drawing.Point(40, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 29);
+            this.label2.Size = new System.Drawing.Size(184, 29);
             this.label2.TabIndex = 12;
-            this.label2.Text = "No Obstacles";
+            this.label2.Text = "Obstacle in range";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBox1
             // 
@@ -218,7 +221,7 @@
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox1.Location = new System.Drawing.Point(239, 34);
+            this.comboBox1.Location = new System.Drawing.Point(159, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(195, 33);
             this.comboBox1.TabIndex = 13;
@@ -228,7 +231,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
-            this.label3.Location = new System.Drawing.Point(129, 41);
+            this.label3.Location = new System.Drawing.Point(62, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 25);
             this.label3.TabIndex = 14;
@@ -241,7 +244,7 @@
             this.button4.FlatAppearance.BorderSize = 3;
             this.button4.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
-            this.button4.Location = new System.Drawing.Point(475, 36);
+            this.button4.Location = new System.Drawing.Point(395, 32);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 34);
             this.button4.TabIndex = 15;
@@ -261,12 +264,32 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Status";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkGray;
+            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
+            this.button5.Location = new System.Drawing.Point(522, 32);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(94, 35);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Disconnect";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(662, 522);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
@@ -300,11 +323,13 @@
         private ArrowButton.ArrowButton arrowButton4;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Label label1;
         private Label label2;
         private ComboBox comboBox1;
         private Label label3;
         private Button button4;
         private GroupBox groupBox3;
+        private System.Windows.Forms.Timer timer1;
+        private Label label1;
+        private Button button5;
     }
 }

@@ -20,40 +20,40 @@ void config_RC_Driver()
 	// 50% duty cycle @ about 30% from the timer cycle
 	OCR0A = 80;
 }
-void forward(){
+void backward(){
 	//Left motor
 	DIO_SetPinValue(PORT3,2,1);
 	DIO_SetPinValue(PORT3,3,0);
 	//Right motor
-	DIO_SetPinValue(PORT3,4,1);
-	DIO_SetPinValue(PORT3,5,0);
+	DIO_SetPinValue(PORT3,5,1);
+	DIO_SetPinValue(PORT3,4,0);
 }
 
- void backward(){
+ void forward(){
 	//Left motor
 	DIO_SetPinValue(PORT3,2,0);
 	DIO_SetPinValue(PORT3,3,1);
 	//Right motor
-	DIO_SetPinValue(PORT3,4,0);
-	DIO_SetPinValue(PORT3,5,1);
+	DIO_SetPinValue(PORT3,5,0);
+	DIO_SetPinValue(PORT3,4,1);
  }
  
- void right(){
+ void left(){
 	 //Left motor
 	 DIO_SetPinValue(PORT3,2,1);
 	 DIO_SetPinValue(PORT3,3,0);
 	 //Right motor
-	 DIO_SetPinValue(PORT3,4,0);
-	 DIO_SetPinValue(PORT3,5,1);
+	 DIO_SetPinValue(PORT3,5,0);
+	 DIO_SetPinValue(PORT3,4,1);
  }
 
- void left() {
+ void right() {
 	 //Left motor
 	 DIO_SetPinValue(PORT3,2,0);
 	 DIO_SetPinValue(PORT3,3,1);
 	 //Right motor
-	 DIO_SetPinValue(PORT3,4,1);
-	 DIO_SetPinValue(PORT3,5,0);
+	 DIO_SetPinValue(PORT3,5,1);
+	 DIO_SetPinValue(PORT3,4,0);
  }
  
  void stop(){

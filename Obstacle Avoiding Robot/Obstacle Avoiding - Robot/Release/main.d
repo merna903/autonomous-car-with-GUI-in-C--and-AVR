@@ -10,10 +10,9 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\delay.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  .././Ultarasonic/DIO/LIB/STD_TYPES.h .././Ultarasonic/DIO/LIB/MATH.h \
  .././Ultarasonic/DIO/DIO_Interface.h \
  .././Ultarasonic/Ultrasonic_Interface.h \
@@ -43,13 +42,11 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\delay.h:
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
 .././Ultarasonic/DIO/LIB/STD_TYPES.h:
 

@@ -5,8 +5,9 @@ namespace GUI
     public partial class Form1 : Form
     {
         SerialPort port = null;
-        string data_rx;
+        string data_rx="000";
         int distance = 0;
+        int flag=0;
         public Form1()
         {
             InitializeComponent();
@@ -44,21 +45,10 @@ namespace GUI
         {
             SerialPort sp = (SerialPort)sender;
             string tmp = sp.ReadExisting();
-            //if (data_rx.Length < 3)
-            //{ 
-            //    data_rx += tmp;
-            //    if (data_rx.Length == 3)
-            //    {
-            //        label1.Text = data_rx;
-            //        distance = int.Parse(data_rx);
-            //        label2.Text = distance < 40  ? "Obstacle in range" : "No Obstacles";
-            //    }
-            //}
-            //else
-            //{
-            //    data_rx = tmp;
-            //}
+            data_rx = tmp;
+            data_rx += "0";
         }
+
 
         private void button3_MouseHover(object sender, EventArgs e)
         {
@@ -144,6 +134,30 @@ namespace GUI
         private void button3_Click(object sender, EventArgs e)
         {
             port.Write("7");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = data_rx;
+            distance = int.Parse(data_rx);
+            label2.Text = distance < 40 ? "Obstacle in range" : "No Obstacles";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            disconnect();
+        }
+
+        private void disconnect()
+        {
+            try
+            {
+                if (port.IsOpen)
+                {
+                    port.Close();
+                }
+            }
+            catch (Exception ex) { }
         }
     }
 }

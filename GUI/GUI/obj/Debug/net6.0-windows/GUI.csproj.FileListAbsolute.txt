@@ -41,3 +41,4 @@ C:\Users\acer\OneDrive\Documents\4th\1st term\CI\Autonomous Car\autonomous-car-w
 C:\Users\acer\OneDrive\Documents\4th\1st term\CI\Autonomous Car\autonomous-car-with-GUI-in-C--and-AVR\GUI\GUI\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\System.IO.Ports.dll
 C:\Users\acer\OneDrive\Documents\4th\1st term\CI\Autonomous Car\autonomous-car-with-GUI-in-C--and-AVR\GUI\GUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.IO.Ports.dll
 C:\Users\acer\OneDrive\Documents\4th\1st term\CI\Autonomous Car\autonomous-car-with-GUI-in-C--and-AVR\GUI\GUI\obj\Debug\net6.0-windows\GUI.csproj.CopyComplete
+C:\Users\acer\OneDrive\Documents\4th\1st term\CI\Autonomous Car\autonomous-car-with-GUI-in-C--and-AVR\GUI\GUI\obj\Debug\net6.0-windows\GUI.Properties.Resources.resources
