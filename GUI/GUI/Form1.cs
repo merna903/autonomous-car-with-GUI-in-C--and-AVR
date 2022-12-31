@@ -96,14 +96,12 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             port.Write("1");
-            Console.Write("1");
         }
 
         // Manual play send a char 2
         private void button2_Click(object sender, EventArgs e)
         {
             port.Write("2");
-            Console.Write("2");
         }
 
         // up

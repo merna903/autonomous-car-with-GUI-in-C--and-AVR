@@ -279,15 +279,16 @@ void Train()
 			_delay_ms(500); 
 			Update(Q,STATE,NEXT_STATE,ACTION,REWARD,ALPHA ,GAMMA);
 			STATE = NEXT_STATE;
-			EPSILON = DECAY(EPSILON);      
+			EPSILON = DECAY(EPSILON); 
+			temp1 = ultarasonic_distance()%1000;
+			UART_TxChar(temp1/100 + 48);
+			temp1 %= 100;
+			UART_TxChar(temp1/10 + 48);
+			temp1 %= 10;
+			UART_TxChar(temp1 + 48);     
 		} else break;
 	}
-	temp1 = ultarasonic_distance()%1000;
-	UART_TxChar(temp1/100 + 48);
-	temp1 %= 100;
-	UART_TxChar(temp1/10 + 48);
-	temp1 %= 10;
-	UART_TxChar(temp1 + 48);
+	
 	save_q_table();
 }
 

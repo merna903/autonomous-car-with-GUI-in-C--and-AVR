@@ -244,9 +244,9 @@
             this.button4.FlatAppearance.BorderSize = 3;
             this.button4.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
-            this.button4.Location = new System.Drawing.Point(395, 32);
+            this.button4.Location = new System.Drawing.Point(372, 32);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 34);
+            this.button4.Size = new System.Drawing.Size(117, 34);
             this.button4.TabIndex = 15;
             this.button4.Text = "Connect";
             this.button4.UseVisualStyleBackColor = false;
@@ -275,9 +275,9 @@
             this.button5.BackColor = System.Drawing.Color.DarkGray;
             this.button5.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(24)))), ((int)(((byte)(91)))));
-            this.button5.Location = new System.Drawing.Point(522, 32);
+            this.button5.Location = new System.Drawing.Point(502, 32);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 35);
+            this.button5.Size = new System.Drawing.Size(114, 35);
             this.button5.TabIndex = 17;
             this.button5.Text = "Disconnect";
             this.button5.UseVisualStyleBackColor = false;
